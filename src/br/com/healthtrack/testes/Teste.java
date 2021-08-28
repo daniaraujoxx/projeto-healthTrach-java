@@ -1,19 +1,13 @@
 package br.com.healthtrack.testes;
 
-import br.com.healthtrack.entity.Usuario;
+import br.com.healtrack.entity.Usuario;
 
-public class Teste {
+public class Testes {
 
 	public static void main(String[] args) {
 		
 		Usuario usuario = new Usuario();
 		
 		usuario.logar();
-		
-		
-	
-
-
 	}
-
 }
