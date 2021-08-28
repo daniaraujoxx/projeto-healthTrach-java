@@ -1,14 +1,14 @@
-package br.com.healthtrack.entity;
+package br.com.healtrack.entity;
 
 /**
- * Classe para agendar consulta com Nutricionista
+ * Classe que abstrai o conceito de Nutricionista
  * 
  * @author Grupo LIFED
- * @version 1.0<h3> </h3>*/
+ * @version 1.0*/
 public class Nutricionista {
 
-	private int cfn = 123;
-	private String nome = "Rafaela";
+	private int cfn;
+	private String nome;
 
 	public int getCfn() {
 		return cfn;
