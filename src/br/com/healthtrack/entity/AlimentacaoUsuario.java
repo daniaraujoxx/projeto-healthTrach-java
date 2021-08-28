@@ -1,60 +1,43 @@
-package br.com.healthtrack.entity;
+package br.com.healtrack.entity;
 
 import java.util.Scanner;
 
 /**
- * Classe que abstrai refeições diárias
+ * Classe que abstrai refeiÃ§Ãµes diÃ¡rias
  * @author Grupo LIFED
- * @version 1.0<h3> </h3>*/
+ * @version 1.0*/
 
 public class AlimentacaoUsuario {
 
-	/** Quantidade de refeições que o usuário fez em um dia 
+	/** 
+	 * Quantidade de refeiÃ§Ãµes que o usuÃ¡rio fez em um dia 
 	 * 
 	 */
 	private int qtAlimento;
 	
-	/** Descrição de cada refeição
+	/** 
+	 * DescriÃ§Ã£o de cada refeiÃ§Ã£o
 	 * 
 	 */
 	private String descAlimento;
 	
-	/** Getters e Setters
-	 * 
-	 */
-
-	public int getQtAlimento() {
-		return qtAlimento;
-	}
-
-	public void setQtAlimento(int qtAlimento) {
-		this.qtAlimento = qtAlimento;
-	}
-
-	public String getDescAlimento() {
-		return descAlimento;
-	}
-
-	public void setDescAlimento(String descAlimento) {
-		this.descAlimento = descAlimento;
-	}
-
-	/** Método que possibilita o cadastro de cada refeição
+	/** 
+	 * MÃ©todo que possibilita o cadastro de cada refeiÃ§Ã£o
 	 * 
 	 */
 	public void cadastrarAlimento() {
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("Digite o número de refeições: ");
+		System.out.print("Digite o nÃºmero de refeiÃ§Ãµes: ");
 		this.qtAlimento = sc.nextInt();
 
 		for (int i = 0; i < this.qtAlimento; i++) {
-			System.out.println("Digite a refeição: ");
+			System.out.print("Digite a refeiÃ§Ã£o: ");
 			this.descAlimento = sc.next();
 
 		}
-		System.out.println("Você fez: " + this.qtAlimento + " refeições" + "\nRefeições salvas com sucesso!");
+		System.out.println("==============================\n"
+				+ "VocÃª fez: " + this.qtAlimento + " refeiÃ§Ãµes" + "\nRefeiÃ§Ãµes salvas com sucesso!");
 		sc.close();
 	}
-
 }
