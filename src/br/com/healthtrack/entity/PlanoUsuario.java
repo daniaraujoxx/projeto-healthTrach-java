@@ -1,10 +1,10 @@
-package br.com.healthtrack.entity;
+package br.com.healtrack.entity;
 
 /**
  * Classe para passar o tipo de plano
  * 
  * @author Grupo LIFED
- * @version 1.0<h3> </h3>*/
+ * @version 1.0*/
 
 public class PlanoUsuario {
 	
@@ -18,10 +18,4 @@ public class PlanoUsuario {
 		this.tipoPlano = tipoPlano;
 	}
 	
-
-	
-	
-	
-	
-
 }
