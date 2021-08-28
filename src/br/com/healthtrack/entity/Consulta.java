@@ -1,4 +1,4 @@
-package br.com.healthtrack.entity;
+package br.com.healtrack.entity;
 
 import java.util.Scanner;
 
@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Classe para agendar consulta com Nutricionista
  * 
  * @author Grupo LIFED
- * @version 1.0<h3> </h3>*/
+ * @version 1.0*/
 public class Consulta {
 	
 	/** Atributo para agendar a data
@@ -19,25 +19,32 @@ public class Consulta {
 	 */
 	private Nutricionista nutricionista;
 
-	/**MÈtodo para verificar se o usu·rio possui o plano Premium, se ele possuir, consegue marcar a consulta
+	/**M√©todo para verificar se o usu√°rio possui o plano Premium, se ele possuir, consegue marcar a consulta
 	 * 
 	 */
 	public void verificaPlano() {
 		Scanner sc = new Scanner(System.in);
 		PlanoUsuario planoUsuario = new PlanoUsuario();
-		Usuario usuario = new Usuario();
 		nutricionista = new Nutricionista();
+		nutricionista.setNome("Rafaela");
+		nutricionista.setCfn(422);
 
-		System.out.println("Qual o seu plano? ");
+		System.out.println("Qual o seu plano?\n"
+				+ "Digite:\n"
+				+ "[1] Premium"
+				+ "\n[2] Comum"
+				+ "\n================");
+		System.out.print("Sua Op√ß√£o: ");
+		
 		int plano = sc.nextInt();
 		if (planoUsuario.getTipoPlano()[0] == plano) {
 			System.out.println("Digite o dia que deseja realizar a consulta: ");
 			this.dataConsulta = sc.next();
 			System.out.println("Sua consulta foi marcada para o dia: " + this.dataConsulta 
-					+ "\ncom a nutricionista: " + nutricionista.getNome());
+					+ "\ncom a nutricionista: " + nutricionista.getNome() + " CFN[" +nutricionista.getCfn() + "]");
 
 		} else {
-			System.out.println("Seu plano n„o permite realizar consultas com o nutricionista!");
+			System.out.println("Seu plano n√£o permite realizar consultas com o nutricionista!");
 		}
 
 	}
