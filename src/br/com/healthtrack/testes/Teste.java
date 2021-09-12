@@ -1,8 +1,8 @@
 package br.com.healthtrack.testes;
 
-import br.com.healtrack.entity.Usuario;
+import br.com.healthtrack.entity.Usuario;
 
-public class Testes {
+public class Teste {
 
 	public static void main(String[] args) {
 		

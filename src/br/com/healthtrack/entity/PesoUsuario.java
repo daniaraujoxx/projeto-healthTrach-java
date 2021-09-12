@@ -1,4 +1,5 @@
-package br.com.healtrack.entity;
+package br.com.healthtrack.entity;
+
 
 import java.util.Scanner;
 

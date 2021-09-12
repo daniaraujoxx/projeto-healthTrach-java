@@ -1,37 +1,35 @@
-package br.com.healtrack.entity;
+package br.com.healthtrack.entity;
 
 import java.util.Scanner;
 
 /**
- * Classe responsável pelo Cadastro dos Usuários e direcionamento pela aplicação
+ * Classe responsável pelo Cadastro dos Usuários e direcionamento pela
+ * aplicação
+ * 
  * @author Grupo LIFED
  *
  */
-public class Usuario {
+public class Usuario extends Pessoa {
 
-	private String nome;
-	private String email;
-	private String senha;
 	AlimentacaoUsuario alimentacao;
-	PesoUsuario peso; 
+	PesoUsuario peso;
 	Consulta consulta;
 	PlanoUsuario plano;
 	private int planoEscolhido;
 
 	Scanner sc = new Scanner(System.in);
 
-	
 	/**
 	 * Método responsável pelo cadastro do usuário
 	 */
 	public void cadastrarUsuario() {
 		System.out.print("Realizar Cadastro: \nNome: ");
-		this.nome = sc.next();
+		super.setNome(sc.next());
 		System.out.print("Email: ");
-		this.email = sc.next();
+		super.setEmail(sc.next());
 		System.out.print("Senha: ");
-		this.senha = sc.next();
-		System.out.println("\n" + this.nome + ", estamos quase finalizando seu cadastro.");
+		super.setSenha(sc.next());
+		System.out.println("\n" + super.getNome() + ", estamos quase finalizando seu cadastro.");
 	}
 
 	/**
@@ -55,49 +53,46 @@ public class Usuario {
 			System.out.println("Você optou pelo Plano Comum" + "\n Cadastro finalizado com sucesso!");
 		}
 	}
-	
+
 	/**
-	 * Método responsável por verificar se o usuário possui cadastro
-	 * direciona o usuário para o que for necessário.
+	 * Método responsável por verificar se o usuário possui cadastro direciona o
+	 * usuário para o que for necessário.
 	 */
 	public void logar() {
-		
+
 		int cadastrado = 0;
-		
+
 		System.out.println("======== Health Track ========");
-		
+
 		do {
-			System.out.println("Já possui cadastro? "
-					+ "\nDigite: \n[1] Para SIM "
-					+ "\n[2] Para NÃO"
+			System.out.println("Já possui cadastro? " + "\nDigite: \n[1] Para SIM " + "\n[2] Para NÃO"
 					+ "\n==============================");
 			System.out.print("Sua Opção: ");
 			cadastrado = sc.nextInt();
-			
-		}while(cadastrado != 1 && cadastrado != 2);
-		
-		if(cadastrado == 1) {
+
+		} while (cadastrado != 1 && cadastrado != 2);
+
+		if (cadastrado == 1) {
 			System.out.print("Email: ");
-			this.email = sc.next();
+			super.setEmail(sc.next());
 			System.out.print("Senha: ");
-			this.senha = sc.next();
+			super.setSenha(sc.next());
 			opcoes();
-		} 
-		else{
+		} else {
 			cadastrarUsuario();
 			escolherPlano();
 			opcoes();
 		}
 	}
-	
+
 	/**
-	 *  Método responsável por marcar uma consulta com Nutricionista
+	 * Método responsável por marcar uma consulta com Nutricionista
 	 */
 	public void marcarConsulta() {
 		consulta = new Consulta();
 		consulta.verificaPlano();
 	}
-	
+
 	/*
 	 * Método responsável pelo menu de acesso das funções da aplicação
 	 */
@@ -105,25 +100,22 @@ public class Usuario {
 		alimentacao = new AlimentacaoUsuario();
 		peso = new PesoUsuario();
 		System.out.println("\n=========== Menu de Opções ==========="
-				+ "\nDigite \n[1] Para cadastrar alimentação diária" 
-				+ "\n[2] Para cadastrar peso e meta de peso "
-				+ "\n[3] Para marcar consulta"
-				+ "\n======================================");
+				+ "\nDigite \n[1] Para cadastrar alimentação diária" + "\n[2] Para cadastrar peso e meta de peso "
+				+ "\n[3] Para marcar consulta" + "\n======================================");
 		System.out.print("Sua opção: ");
-		
+
 		int opcaoEscolhida = sc.nextInt();
-		
-		if(opcaoEscolhida == 1) {
+
+		if (opcaoEscolhida == 1) {
 			alimentacao.cadastrarAlimento();
-			
+
 		} else if (opcaoEscolhida == 2) {
 			peso.cadastrarPeso();
-			
-			
+
 		} else if (opcaoEscolhida == 3) {
 			marcarConsulta();
 		}
-		
+
 	}
 
 }
